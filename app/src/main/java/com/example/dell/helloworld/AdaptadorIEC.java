@@ -2,6 +2,7 @@ package com.example.dell.helloworld;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,11 +56,8 @@ public class AdaptadorIEC extends BaseAdapter {
 
         Figura figura = figuras.get(position);
 
-        TextView lblTitulo = (TextView) v.findViewById(R.id.Lb1Titulo);
-        lblTitulo.setText(figura.getNombre());
-
         ImageView imagen = (ImageView) v.findViewById(R.id.Lb1Imagen);
-        imagen.setImageDrawable(figura.getImagen());
+        imagen.setImageResource(figura.getId_img());
 
         return v;
     }

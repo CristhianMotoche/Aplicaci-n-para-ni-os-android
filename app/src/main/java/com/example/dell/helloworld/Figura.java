@@ -10,18 +10,23 @@ import java.io.Serializable;
  * Created by Dell on 03/01/2015.
  */
 @SuppressWarnings("serial")
-public class Figura implements Parcelable {
+public class Figura {
     private String nombre;
-    private Drawable imagen;
     private long id;
     private String descripcion;
     private Drawable fotos [];
+    private int id_img;
 
-    Figura(String nombre, String descripcion, Drawable imagen, Drawable[] fotos){
+    Figura(String nombre, String descripcion, int id_img, Drawable[] fotos){
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.imagen = imagen;
         this.fotos = fotos;
+        this.id_img = id_img;
+    }
+
+
+    public int getId_img(){
+        return this.id_img;
     }
 
     public String getDescripcion() {
@@ -32,10 +37,6 @@ public class Figura implements Parcelable {
         return fotos;
     }
 
-    public Drawable getImagen() {
-        return imagen;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -43,25 +44,4 @@ public class Figura implements Parcelable {
     public long getId(){
         return id;
     }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.fotos);
-        dest.writeString(this.nombre);
-        dest.writeString(this.descripcion);
-        dest.writeLong(this.id);
-    }
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public Figura createFromParcel(Parcel in) {
-            return null;
-        }
-        public Figura[] newArray(int size) {
-            return new Figura[size];
-        }
-    };
 }
