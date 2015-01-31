@@ -1,6 +1,5 @@
 package com.example.dell.helloworld;
 
-import android.Manifest;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,7 +16,7 @@ public class MostrarFigura extends Activity {
 
     private TextView titulo;
     private TextView descripcion;
-    private byte b[];
+    Figura figura;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +27,21 @@ public class MostrarFigura extends Activity {
         setContentView(R.layout.activity_figura);
 
         Bundle bundle = getIntent().getExtras();
+        figura = (Figura)getIntent().getExtras().getSerializable("figura_parametro");
 
-        titulo = (TextView) findViewById(R.id.figura_title);
-        descripcion = (TextView) findViewById(R.id.descFig);
-        b = bundle.getByteArray("imagen");
-        Bitmap bmp = BitmapFactory.decodeByteArray(b, 0, b.length);
-        ImageView image = (ImageView) findViewById(R.id.foto);
-        image.setImageBitmap(bmp);
+        ImageView image = (ImageView) findViewById(R.id.foto1);
+        image.setImageResource(figura.getFotos()[0]);
 
-        titulo.setText(bundle.getString("titulo"));
-        descripcion.setText(bundle.getString("descripcion"));
+        ImageView image1 = (ImageView) findViewById(R.id.foto2);
+        image1.setImageResource(figura.getFotos()[1]);
+
+        ImageView image2 = (ImageView) findViewById(R.id.foto3);
+        image2.setImageResource(figura.getFotos()[2]);
+
+        ImageView image3 = (ImageView) findViewById(R.id.foto4);
+        image3.setImageResource(figura.getFotos()[3]);
+
+        ImageView image4 = (ImageView) findViewById(R.id.foto5);
+        image4.setImageResource(figura.getFotos()[4]);
     }
 }

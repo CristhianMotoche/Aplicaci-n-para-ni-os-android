@@ -10,14 +10,14 @@ import java.io.Serializable;
  * Created by Dell on 03/01/2015.
  */
 @SuppressWarnings("serial")
-public class Figura {
+public class Figura implements Serializable{
     private String nombre;
     private long id;
     private String descripcion;
-    private Drawable fotos [];
+    private int fotos [];
     private int id_img;
 
-    Figura(String nombre, String descripcion, int id_img, Drawable[] fotos){
+    Figura(String nombre, String descripcion, int id_img, int[] fotos){
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fotos = fotos;
@@ -33,7 +33,7 @@ public class Figura {
         return descripcion;
     }
 
-    public Drawable[] getFotos() {
+    public int[] getFotos() {
         return fotos;
     }
 

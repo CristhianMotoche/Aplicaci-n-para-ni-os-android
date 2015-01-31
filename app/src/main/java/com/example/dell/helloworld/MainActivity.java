@@ -18,16 +18,28 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Retirar la barra de titulo
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //FullScreen
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         entradaBotonIniciar();
         entradaBotonAbout();
+        entradaBotonJuego();
         salirBotonSalir();
-
+        // Musica para la aplicación
         md = MediaPlayer.create(getApplicationContext(),R.raw.main_music);
         md.start();
+    }
 
+    private void entradaBotonJuego() {
+        Button accion_about = (Button) findViewById(R.id.btnJuego);
+        accion_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Juego.class));
+            }
+        });
     }
 
     private void entradaBotonAbout() {

@@ -20,8 +20,6 @@ import java.util.ArrayList;
  */
 public class ListaFiguras extends ActionBarActivity {
 
-    OutputStream outStream;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +30,18 @@ public class ListaFiguras extends ActionBarActivity {
 
         final ArrayList<Figura> figuras = new ArrayList<Figura>();
 
-        figuras.add(new Figura("Círculo","Figura redonda", R.drawable.lista_circulo, null));
-        figuras.add(new Figura("Cuadrado", "Un cuadrado", R.drawable.lista_cuadrado, null));
-        figuras.add(new Figura("Triángulo", "Figura triangular", R.drawable.lista_triangulo, null));
-        figuras.add(new Figura("Rectángulo","Figura rectangular", R.drawable.ic_launcher, null));
+        int fotos_cir[] = {R.drawable.fig_circulo, R.drawable.icon_flor,
+                R.drawable.icon_pelota, R.drawable.icon_rueda, R.drawable.icon_sol};
+
+        int fotos_cua[] = {R.drawable.fig_cuadrado, R.drawable.icon_casa,
+                R.drawable.icon_tele, R.drawable.icon_ventana, R.drawable.icon_regalo};
+
+        int fotos_tri[] = {R.drawable.fig_triangulo, R.drawable.icon_arbol,
+                R.drawable.icon_piramide, R.drawable.icon_monte, R.drawable.icon_barco};
+
+        figuras.add(new Figura("Círculo","Figura redonda", R.drawable.lista_circulo,fotos_cir));
+        figuras.add(new Figura("Cuadrado", "Un cuadrado", R.drawable.lista_cuadrado, fotos_cua));
+        figuras.add(new Figura("Triángulo", "Figura triangular", R.drawable.lista_triangulo, fotos_tri));
 
         AdaptadorIEC adaptador = new AdaptadorIEC(this, figuras);
         lstFiguras.setAdapter(adaptador);
@@ -43,20 +49,12 @@ public class ListaFiguras extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ListaFiguras.this, MostrarFigura.class);
-                intent.putExtra("titulo",figuras.get(position).getNombre());
-                intent.putExtra("descripcion",figuras.get(position).getDescripcion());
-                // Pasar imagen
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), figuras.get(position).getId_img());
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                byte[] b = baos.toByteArray();
-                intent.putExtra("imagen",b);
+                intent.putExtra("figura_parametro",figuras.get(position));
                 // Acción según el item que presione
                 switch (position){
                     case 0:
                     case 1:
                     case 2:
-                    case 3:
                         startActivity(intent);
                         break;
                 }

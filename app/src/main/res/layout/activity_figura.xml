@@ -1,48 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@drawable/fondo_menu">
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal"
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/foto2"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="111dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/foto3"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher"
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_alignTop="@+id/foto2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/foto4"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher"
+        android:layout_below="@+id/foto2"
+        android:layout_alignLeft="@+id/foto2"
+        android:layout_alignStart="@+id/foto2"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/foto5"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher"
+        android:layout_alignTop="@+id/foto4"
+        android:layout_alignLeft="@+id/foto3"
+        android:layout_alignStart="@+id/foto3" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/foto"
+        android:id="@+id/foto1"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Figura"
-        android:id="@+id/figura_title"
-        android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/foto"
+        android:layout_above="@+id/foto3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp" />
+        android:layout_marginBottom="30dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/descFig"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/figura_title"
-        android:layout_marginTop="19dp"/>
-    </RelativeLayout>
+        </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

@@ -14,17 +14,6 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Menú de Inicio"
-                android:id="@+id/textTitle"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold|italic"
-                android:textColor="#FF4C2D52"
-                android:layout_gravity="center_horizontal" />
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"

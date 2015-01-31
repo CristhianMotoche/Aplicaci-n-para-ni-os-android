@@ -4,24 +4,36 @@
     android:layout_height="match_parent"
     android:id="@+id/linearAbout"
     android:background="@drawable/fondo">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/logo"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@android:style/Animation"
-        android:text="Esta aplicación fue creada para ayudar a los niños que por motivos de fuerza mayor no pueden asistir a clase presencialmente.
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/Animation.Translucent"
+                android:text="Esta aplicación fue creada para ayudar a los niños que por motivos de fuerza mayor no pueden asistir a clase presencialmente.
         \nDesarrolladores:
         \n\tStalin Aguirre \n\tSebastián Ávalos \n\tDavid Dávila \n\tDavid Moncayo \n\tCristhian Motoche"
-        android:id="@+id/textView"
-        android:textColor="#ff000000"
-        android:layout_margin="8dp"
-        android:focusableInTouchMode="false" />
-
+                android:id="@+id/textView"
+                android:textColor="#ff000000"
+                android:focusableInTouchMode="false"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@android:string/VideoView_error_button"
+                android:layout_below="@+id/imageView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </ScrollView>
 </LinearLayout>
